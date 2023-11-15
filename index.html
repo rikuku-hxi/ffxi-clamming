@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFXI Clamming Calculator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- BOOTSTRAP INCLUDED -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- CUSTOM STYLESHEET -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- CUSTOM JS -->
+    <script src="script.js"></script>
+</head>
+<style>
+    .btn-danger {
+        background-color: #9A1818 !important;
+        border-color: #9A1818;
+    }
+</style>
+
+<body onload="printPage()">
+    <div class="container-fluid">
+        <center>
+            <h1 class="logo">FFXI Clamming Calculator</h1>
+        </center>
+        <div class="row">
+            <div class="col-md-7">
+                <div id="calculator"></div>
+                <form>
+                    <div class="button-container mt-2">
+                        <button type="button" value="Empty Bucket ❌" onclick="emptyBucket()"
+                            class="btn btn-danger">Empty Bucket ❌</button>
+                        <button type="button" onclick="resetValues()" class="btn btn-danger">Reset Prices
+                            🏷️</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-5">
+                <div class="total-weight-container">
+                    <div>
+                        <span class="total-weight-label">Weight ⚖️</span>
+                        <span id="TotalWeightDisplay" class="total-weight">0</span>
+                    </div>
+                    <div>
+                        <span class="total-weight-label">Profit 💰</span>
+                        <span id="TotalValueDisplay" class="total-profit">-500g</span>
+                    </div>
+                </div>
+                <div class="items">
+                    <h2>Items 🛒 (<span id="BucketItemCount">0</span>)</h2>
+                    <center>
+                        <div id="bucket"></div>
+                    </center>
+                </div>
+
+            </div>
+
+        </div>
+        <footer>
+            <p class="guides">
+                HorizonXI Sunbreeze Festival 2023 (Aug 4th - 31st):
+                    <a href="https://horizonffxi.wiki/Sunbreeze_Festival_2023" target="_blank">Event Info</a> | 
+                    <a href="https://horizonffxi.wiki/Sunbreeze_Festival_2023/Guide" target="_blank">Event Guide</a> 
+                <br>    
+                Clamming Guides: 
+                    <a href="https://horizonffxi.wiki/Clamming" target="_blank">HorizonXI</a> | 
+                    <a href="https://ffxiclopedia.fandom.com/wiki/Clamming" target="_blank">Retail</a> |
+                    <a href="https://classicffxi.fandom.com/wiki/Clamming" target="_blank">Eden</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        //Script for tooltips on the buttons(for displaying abundance on hover)
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+                console.log("Function Called");
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+
+    </script>
+</body>
+
+</html>
